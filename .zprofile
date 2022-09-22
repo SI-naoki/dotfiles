@@ -22,7 +22,6 @@ bindkey "^R" history-incremental-search-backward
 stty stop undef
 
 # VARIABLE
-#export BROWSER=/Applications/Vivaldi.app/Contents/MacOS/Vivaldi
 export EDITOR=nvim
 bindkey -e
 export MANPAGER="nvim +Man!"
