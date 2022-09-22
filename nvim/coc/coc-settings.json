@@ -1,5 +1,7 @@
 {
+  "suggest.noselect": true,
   "diagnostic.virtualText": true,
+  "codeLens.enable": true,
   "list.insertMappings": {
     "<C-b>": "prompt:left",
     "<C-f>": "prompt:right",
