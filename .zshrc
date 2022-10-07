@@ -28,6 +28,7 @@ alias fzf='fzf-tmux'
 # short alias
 alias e='nvim'
 alias v='nvim'
+alias o='open'
 alias d='docker'
 alias dc='docker-compose'
 alias tf='terraform'
@@ -75,6 +76,8 @@ fpath=($XDG_CONFIG_HOME/zsh/completion $fpath)
 # fzf
 source $XDG_CONFIG_HOME/zsh/fzf/_fzf
 source $XDG_CONFIG_HOME/zsh/fzf/_fzf.bindings
+# windows
+source $XDG_CONFIG_HOME/zsh/windows/_open
 
 ## zsh config general
 # prompt

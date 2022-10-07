@@ -37,9 +37,9 @@ eval "$(pyenv init -)"
 # -> ruby
 #PATH="${HOME}/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"
-# -> php (phpenv must comes after rbenv with its PATH)
-#PATH="${HOME}/.phpenv/bin:$PATH"
-#eval "$(phpenv init -)"
+# -> php (also: phpenv-build,phpenv-composer)
+PATH="${HOME}/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
 # -> go
 export GOPATH=$HOME/usr/local/go
 PATH="$PATH:$GOPATH/bin"

@@ -112,6 +112,8 @@ nnoremap <C-w>gf :rightbelow wincmd f<CR>
 nnoremap <silent> <C-w>] :vertical rightbelow wincmd ]<CR><C-g>
 nnoremap <silent> <C-w><C-]> :rightbelow wincmd ]<CR><C-g>
 "custom
+"quick open vimrc
+nnoremap <silent> <Space>, :edit ~/.vimrc<CR>
 "[sub],[SUB] as prefix
 nnoremap [sub] <Nop>
 nmap s [sub]
@@ -305,16 +307,22 @@ endfunction
 "keymaps
 nnoremap [coc] <Nop>
 nmap <Space>c [coc]
+"global usage
+nnoremap <silent> [coc]c :CocCommand<CR>
 nnoremap <silent> [coc]l :CocList<CR>
 nnoremap <silent> [coc], :CocConfig<CR>
 nnoremap <silent> [coc]. :view ~/.cache/dein/repos/github.com/neoclide/coc.nvim_release/data/schema.json \| setlocal nomodifiable<CR>
+"diagnostic
 nmap <silent> [a <Plug>(coc-diagnostic-prev)
 nmap <silent> ]a <Plug>(coc-diagnostic-next)
-inoremap <silent><expr> <C-l> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <C-l> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <C-l> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+"reference
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <silent> <C-]> :call <SID>go_definition()<CR>
 nnoremap <silent> [Tab]<C-]> :call CocActionAsync('jumpDefinition','tabe')<CR>
 nmap <silent> <C-\> <Plug>(coc-references)
+"formatting
 nmap <Leader>r <Plug>(coc-rename)
 nmap <leader>f  <Plug>(coc-format)
 vmap <leader>f  <Plug>(coc-format-selected)
@@ -409,7 +417,6 @@ augroup vimrc
     autocmd Filetype vim setlocal foldmethod=marker
     autocmd Filetype make setlocal noexpandtab
     autocmd FileType help,diff,Preview,ref* nnoremap <buffer> q <C-w>c
-    autocmd FileType c setlocal path+=/usr/local/include,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/macosx.sdk/usr/include,/Users/naoki/scripts/src/util-linux/util-linux-2.31-rc1/include 
     autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 iskeyword+=?
     autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4
     autocmd BufNewFile,BufRead *.xaml setfiletype xml
